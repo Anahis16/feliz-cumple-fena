@@ -1,0 +1,347 @@
+/* ===========================
+CONFIGURACIÓN GENERAL
+=========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#0b0b0b;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* ===========================
+PANTALLA DE INICIO
+=========================== */
+
+#inicio{
+position:fixed;
+inset:0;
+background:linear-gradient(180deg,#000,#180000);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+transition:1s;
+}
+
+.contenidoInicio{
+text-align:center;
+padding:20px;
+}
+
+.contenidoInicio h1{
+font-size:55px;
+color:#ff4d6d;
+margin-bottom:15px;
+text-shadow:0 0 20px #ff003c;
+}
+
+.contenidoInicio p{
+color:#ddd;
+font-size:18px;
+margin-bottom:35px;
+}
+
+#abrirRegalo{
+background:#d90445;
+color:white;
+border:none;
+padding:16px 40px;
+border-radius:50px;
+font-size:20px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 0 20px rgba(255,0,60,.5);
+}
+
+#abrirRegalo:hover{
+transform:scale(1.08);
+background:#ff2f63;
+}
+
+#pagina{
+display:none;
+}
+
+/* ===========================
+HEADER
+=========================== */
+
+header{
+text-align:center;
+padding:70px 20px 40px;
+}
+
+header h1{
+color:#ff4d6d;
+font-size:50px;
+margin-bottom:15px;
+}
+
+header p{
+color:#ddd;
+font-size:20px;
+line-height:1.8;
+}
+
+/* ===========================
+MENÚ
+=========================== */
+
+nav{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin:30px 0;
+}
+
+nav button{
+background:#1b1b1b;
+color:white;
+border:2px solid #ff4d6d;
+border-radius:30px;
+padding:12px 22px;
+cursor:pointer;
+transition:.3s;
+}
+
+nav button:hover{
+background:#ff4d6d;
+}
+/* ===========================
+GALERÍA
+=========================== */
+
+#galeria{
+width:90%;
+margin:60px auto;
+}
+
+#galeria h2{
+text-align:center;
+font-size:40px;
+color:#ff4d6d;
+margin-bottom:40px;
+}
+
+.contenedorFotos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+justify-items:center;
+}
+
+.foto{
+width:280px;
+height:360px;
+position:relative;
+overflow:hidden;
+border-radius:20px;
+background:#1a1a1a;
+box-shadow:0 10px 30px rgba(255,0,80,.25);
+transition:.35s;
+}
+
+.foto:hover{
+transform:translateY(-8px);
+}
+
+.foto img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:.5s;
+}
+
+.foto:hover img{
+transform:scale(1.08);
+filter:brightness(.45);
+}
+
+.overlay{
+position:absolute;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:rgba(0,0,0,.45);
+color:#fff;
+font-size:22px;
+font-weight:600;
+opacity:0;
+transition:.4s;
+}
+
+.foto:hover .overlay{
+opacity:1;
+}
+
+/* ===========================
+CARTA
+=========================== */
+
+#carta{
+width:90%;
+margin:80px auto;
+}
+
+.carta{
+max-width:900px;
+margin:auto;
+background:#161616;
+border:2px solid #ff4d6d;
+border-radius:25px;
+padding:40px;
+box-shadow:0 10px 35px rgba(255,0,80,.20);
+}
+
+.carta h2{
+text-align:center;
+color:#ff4d6d;
+margin-bottom:30px;
+font-size:36px;
+}
+
+#textoCarta{
+font-size:18px;
+line-height:2;
+white-space:pre-line;
+color:#f3f3f3;
+}
+/* ===========================
+MENSAJE FINAL
+=========================== */
+
+#final{
+width:90%;
+max-width:900px;
+margin:80px auto;
+text-align:center;
+padding:50px 30px;
+border-radius:25px;
+background:linear-gradient(180deg,#1a0008,#0b0b0b);
+border:2px solid #ff4d6d;
+box-shadow:0 10px 35px rgba(255,0,80,.25);
+}
+
+#final h2{
+color:#ff4d6d;
+font-size:42px;
+margin-bottom:25px;
+}
+
+#final p{
+font-size:20px;
+line-height:1.8;
+color:#f5f5f5;
+}
+
+/* ===========================
+FOOTER
+=========================== */
+
+footer{
+margin-top:70px;
+padding:25px;
+text-align:center;
+background:#111;
+border-top:1px solid rgba(255,255,255,.1);
+}
+
+footer p{
+color:#bbb;
+font-size:16px;
+}
+
+/* ===========================
+CORAZONES
+=========================== */
+
+.corazon{
+position:fixed;
+bottom:-30px;
+font-size:22px;
+animation:subir 8s linear forwards;
+pointer-events:none;
+z-index:999;
+}
+
+@keyframes subir{
+
+0%{
+transform:translateY(0) scale(1);
+opacity:1;
+}
+
+100%{
+transform:translateY(-110vh) scale(1.8);
+opacity:0;
+}
+
+}
+
+/* ===========================
+CELULAR
+=========================== */
+
+@media (max-width:768px){
+
+.contenidoInicio h1{
+font-size:38px;
+}
+
+header h1{
+font-size:36px;
+}
+
+header p{
+font-size:17px;
+}
+
+#galeria h2,
+.carta h2,
+#final h2{
+font-size:30px;
+}
+
+.foto{
+width:250px;
+height:320px;
+}
+
+.carta{
+padding:25px;
+}
+
+#textoCarta{
+font-size:16px;
+}
+
+#final p{
+font-size:18px;
+}
+
+nav{
+padding:0 10px;
+}
+
+nav button{
+width:100%;
+max-width:280px;
+}
+
+}
